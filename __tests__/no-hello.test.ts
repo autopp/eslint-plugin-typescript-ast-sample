@@ -1,7 +1,7 @@
 import { noHello } from "../src/no-hello"
-import { RuleTester } from "eslint"
+import { TSESLint } from "@typescript-eslint/experimental-utils"
 
-const ruleTester = new RuleTester({
+const ruleTester = new TSESLint.RuleTester({
   parser: require.resolve('@typescript-eslint/parser'),
   parserOptions: {
     ecmaVersion: 2015,
@@ -13,6 +13,6 @@ ruleTester.run("no-hello", noHello, {
     { code: 'const x = 42' }
   ],
   invalid: [
-    { code: 'const x = "hello"', errors: [{ message: '"hello" is not allowed' }] }
+    { code: 'const x = "hello"', errors: [{ messageId: "no-hello" }] }
   ]
 })
