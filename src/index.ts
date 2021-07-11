@@ -15,9 +15,11 @@
 */
 
 import { noHello } from "./no-hello"
+import { noBooleanExpressionStatement } from "./no-boolean-expression-statement"
 
 export = {
   rules: {
-    'no-hello': noHello
+    'no-hello': noHello,
+    'no-boolean-expression-statement': noBooleanExpressionStatement,
   },
 }
