@@ -21,5 +21,6 @@ ruleTester.run("no-boolean-expression-statement", noBooleanExpressionStatement, 
   invalid: [
     { filename, code: 'let x = true; !x', errors: [{ messageId: "no-boolean-expression-statement" }] },
     { filename, code: 'function f(): boolean { return true }; f()', errors: [{ messageId: "no-boolean-expression-statement" }] },
+    { filename, code: 'type Bool = boolean; function f(): Bool { return true }; f()', errors: [{ messageId: "no-boolean-expression-statement" }] },
   ]
 })
